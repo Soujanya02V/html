@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="bg-black text-white font-[Inter] overflow-x-hidden flex items-center justify-center min-h-screen relative flex-col">
+    <img src="assets/IMAGE.png" alt="Top Left" class="absolute top-0 left-0 w-52 h-82 m-2"/>
+    <img src="assets/IMAGE (1).png" alt="Top Right" class="absolute top-0 right-0 w-52 h-82 m-2"/>
+    <img src="assets/Untitled design (1) 2 (1).png" alt="Bottom Left" class="absolute bottom-0 left-0 w-52 h-82 m-2"/>
+    <img src="assets/Untitled design (1) 1.png" alt="Bottom Right" class="absolute bottom-0 right-0 w-52 h-82 m-2"/>
+    
+    
+    <div class="flex flex-col items-center">
+        <div class="bg-purple-600 w-96 h-64 flex items-center justify-center text-xl font-bold rounded-lg shadow-lg mt-4">
+            <p class="text-center">Inserted Image</p>
+        </div>
+
+         <button class="mt-8 px-6 py-2 bg-[#8F00FF] text-white font-bold rounded-r-full rounded-l-full shadow-lg hover:bg-[#A020F0]">
+            Tap to save the product
+        </button>
+        <div class="flex gap-24" >
+            <button class="mt-8 px-6 py-2 bg-[#8F00FF] text-white font-bold rounded-r-full rounded-l-full shadow-lg hover:bg-[#A020F0] ">
+                Low Hazard
+            </button>
+            <button class="mt-8 px-6 py-2 bg-[#F0C42D] text-white font-bold rounded-r-full rounded-l-full shadow-lg hover:bg-[#E1AD01]">
+                Potential Hazard
+            </button>
+
+            
+
+        </div>
+
+        <div class="relative w-full max-w-[600px] h-12 rounded-full overflow-hidden bg-gray-200 border-t-2 border-gray-400 shadow-lg mt-2">
+            <div id="progress-bar" class="absolute inset-0 h-full w-0 bg-green-500 transition-all duration-[3s]"></div>
+          </div>
+          
+          <style>
+            @keyframes glow {
+              0% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.8); }
+              50% { box-shadow: 0 0 15px rgba(0, 255, 0, 1); }
+              100% { box-shadow: 0 0 5px rgba(0, 255, 0, 0.8); }
+            }
+            .glow-green { animation: glow 1.5s infinite alternate; }
+            .glow-yellow { animation: glow 1.5s infinite alternate; box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); }
+            .glow-red { animation: glow 1.5s infinite alternate; box-shadow: 0 0 10px rgba(255, 0, 0, 0.8); }
+          </style>
+          
+          <script>
+            function updateProgressBar(healthStatus) {
+              let progressBar = document.getElementById("progress-bar");
+              
+              progressBar.classList.remove("glow-green", "glow-yellow", "glow-red");
+          
+              if (healthStatus === "good") {
+                progressBar.style.width = "100%";
+                progressBar.classList.remove("bg-yellow-500", "bg-red-500");
+                progressBar.classList.add("bg-green-500", "glow-green");
+              } else if (healthStatus === "moderate") {
+                progressBar.style.width = "70%";
+                progressBar.classList.remove("bg-green-500", "bg-red-500");
+                progressBar.classList.add("bg-yellow-500", "glow-yellow");
+              } else if (healthStatus === "bad") {
+                progressBar.style.width = "30%";
+                progressBar.classList.remove("bg-green-500", "bg-yellow-500");
+                progressBar.classList.add("bg-red-500", "glow-red");
+              }
+            }
+          
+            // Simulating AI/ML API response (Replace this with actual API call)
+            setTimeout(() => {
+              let scannedProductHealthStatus = "bad"; // Example API response (good, moderate, bad)
+              updateProgressBar(scannedProductHealthStatus);
+            }, 1000); // Delay to simulate processing
+          </script>
+
+          <div class="flex gap-[150px]">
+            <p class="text-green-500">Safety Assessment</p>
+            <p class="text-red-500">Moderate Risk</p>
+          </div>
+
+          <h2 class="text-2xl font-bold mt-10">Quick Analysis</h2>
+          <div class="flex ">
+            <h2 class="text-yellow-500 font-bold mt-10">Key Ingridients :</h2>
+            <p class=" font-bold mt-10">Ingredients</p>
+          </div>
+
+          <div class="flex ">
+            <h2 class="text-yellow-500 font-bold mt-10">Safety Ratings :</h2>
+            <p class=" font-bold mt-10">Ratings</p>
+          </div>
+
+          <div class="flex ">
+            <h2 class="text-yellow-500 font-bold mt-10">Contains:</h2>
+            <p class=" font-bold mt-10 text-yellow-500">Details</p>
+          </div>
+          <button class="mt-8 px-6 py-2 bg-[#8F00FF] text-white font-bold rounded-r-full rounded-l-full shadow-lg hover:bg-[#A020F0]">
+            View Detailed Analysis
+        </button>
+        
+        
+    </div>
+</body>
+</html>
